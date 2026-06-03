@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratio Master // Calculadora de Proporciones Diseño Gráfico</title>
+    <!-- Favicon del proyecto -->
+    <link rel="icon" href="img/logo.png" type="image/jpeg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <!-- Contenedor flex para alinear el logo y el título principal -->
+            <div class="brand-wrapper">
+                <h1>Ratio Master</h1>
+            </div>
+            <p>Herramienta de Escalado y Proporciones para Diseñadores Gráficos</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="workspace">
+            
+            <div class="panel-controls">
+                <h2>Configuración del Lienzo</h2>
+                
+                <form id="ratio-form" onsubmit="event.preventDefault();">
+                    <div class="form-group">
+                        <label for="aspect-ratio">Relación de Aspecto:</label>
+                        <select id="aspect-ratio">
+                            <option value="16:9" selected>16:9 (Pantallas / YouTube)</option>
+                            <option value="1:1">1:1 (Post de Instagram / Cuadrado)</option>
+                            <option value="4:5">4:5 (Retrato Instagram / Vertical)</option>
+                            <option value="3:2">3:2 (Fotografía Réflex)</option>
+                            <option value="21:9">21:9 (UltraWide)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-width">Ancho (px):</label>
+                        <input type="number" id="input-width" placeholder="Ej. 1920" min="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-height">Alto (px):</label>
+                        <input type="number" id="input-height" placeholder="Ej. 1080" min="1">
+                    </div>
+                </form>
+
+                <div id="alert-message" class="alert hidden"></div>
+            </div>
+
+            <div class="panel-preview">
+                <h2>Vista Previa Proporcional</h2>
+                <div class="canvas-container">
+                    <div id="live-canvas">
+                        <span id="canvas-dimensions">0 x 0</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>Desarrollo de Software - Página Hecha por Daniel Carpio</p>
+        <p>Actividad Práctica 2</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
